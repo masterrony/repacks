@@ -1,0 +1,15 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/comps/Products/Item/ItemImage/Overlay/DownloadLink.js":
+/*!******************************************************************************!*\
+  !*** ./src/components/comps/Products/Item/ItemImage/Overlay/DownloadLink.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\n\n\nvar DownloadLink = function DownloadLink(_ref) {\n  var file = _ref.file;\n  var serverUrl = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"useSelector\"])(function (state) {\n    return state.app.serverUrl;\n  });\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", {\n    href: \"\".concat(serverUrl, \"/download/\").concat(file),\n    className: \"overlay-trigger-icon bg-light text-dark\",\n    \"data-hover-animate\": \"fadeInDownSmall\",\n    \"data-hover-animate-out\": \"fadeOutUpSmall\",\n    \"data-hover-speed\": \"350\",\n    title: \"download\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"i\", {\n    className: \"icon-download\"\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DownloadLink);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9jb21wcy9Qcm9kdWN0cy9JdGVtL0l0ZW1JbWFnZS9PdmVybGF5L0Rvd25sb2FkTGluay5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jb21wb25lbnRzL2NvbXBzL1Byb2R1Y3RzL0l0ZW0vSXRlbUltYWdlL092ZXJsYXkvRG93bmxvYWRMaW5rLmpzP2E3NWIiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gJ3JlYWN0LXJlZHV4J1xyXG5cclxuY29uc3QgRG93bmxvYWRMaW5rID0gKHsgZmlsZSB9KSA9PiB7XHJcbiAgY29uc3Qgc2VydmVyVXJsID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUuYXBwLnNlcnZlclVybClcclxuXHJcbiAgcmV0dXJuIChcclxuICAgIDxhIGhyZWY9e2Ake3NlcnZlclVybH0vZG93bmxvYWQvJHtmaWxlfWB9IGNsYXNzTmFtZT1cIm92ZXJsYXktdHJpZ2dlci1pY29uIGJnLWxpZ2h0IHRleHQtZGFya1wiIGRhdGEtaG92ZXItYW5pbWF0ZT1cImZhZGVJbkRvd25TbWFsbFwiIGRhdGEtaG92ZXItYW5pbWF0ZS1vdXQ9XCJmYWRlT3V0VXBTbWFsbFwiIGRhdGEtaG92ZXItc3BlZWQ9XCIzNTBcIiB0aXRsZT1cImRvd25sb2FkXCI+PGkgY2xhc3NOYW1lPVwiaWNvbi1kb3dubG9hZFwiPjwvaT48L2E+XHJcbiAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBEb3dubG9hZExpbmsiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUVBO0FBQ0E7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBRUE7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/components/comps/Products/Item/ItemImage/Overlay/DownloadLink.js\n");
+
+/***/ })
+
+})

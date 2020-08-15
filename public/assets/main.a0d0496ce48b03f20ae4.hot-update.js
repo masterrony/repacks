@@ -1,0 +1,15 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/comps/Products/Item/ItemImage/index.js":
+/*!***************************************************************!*\
+  !*** ./src/components/comps/Products/Item/ItemImage/index.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Overlay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Overlay */ \"./src/components/comps/Products/Item/ItemImage/Overlay/index.js\");\n\n\n\nvar ItemImage = function ItemImage(_ref) {\n  var _id = _ref._id,\n      image = _ref.image,\n      file = _ref.file,\n      title = _ref.title;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"portfolio-image\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"a\", {\n    href: \"portfolio-single.html\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: image,\n    alt: title\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Overlay__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    id: _id,\n    file: file,\n    image: image\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ItemImage);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9jb21wcy9Qcm9kdWN0cy9JdGVtL0l0ZW1JbWFnZS9pbmRleC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jb21wb25lbnRzL2NvbXBzL1Byb2R1Y3RzL0l0ZW0vSXRlbUltYWdlL2luZGV4LmpzPzU4MDUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgT3ZlcmxheSBmcm9tICcuL092ZXJsYXknXHJcblxyXG5jb25zdCBJdGVtSW1hZ2UgPSAoeyBfaWQsIGltYWdlLCBmaWxlLCB0aXRsZSB9KSA9PiB7XHJcbiAgcmV0dXJuIChcclxuICAgIDxkaXYgY2xhc3NOYW1lPVwicG9ydGZvbGlvLWltYWdlXCI+XHJcbiAgICAgIDxhIGhyZWY9XCJwb3J0Zm9saW8tc2luZ2xlLmh0bWxcIj5cclxuICAgICAgICA8aW1nIHNyYz17aW1hZ2V9IGFsdD17dGl0bGV9IC8+XHJcbiAgICAgIDwvYT5cclxuICAgICAgPE92ZXJsYXkgXHJcbiAgICAgICAgaWQ9e19pZH0gXHJcbiAgICAgICAgZmlsZT17ZmlsZX0gXHJcbiAgICAgICAgaW1hZ2U9e2ltYWdlfSBcclxuICAgICAgLz5cclxuICAgIDwvZGl2PlxyXG4gIClcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgSXRlbUltYWdlIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBR0E7QUFDQTtBQUNBO0FBSEE7QUFPQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/components/comps/Products/Item/ItemImage/index.js\n");
+
+/***/ })
+
+})
