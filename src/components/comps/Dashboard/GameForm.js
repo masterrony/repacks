@@ -60,7 +60,18 @@ export default function GameForm({ target }) {
   }
 
   const onFormSubmit = data => {
-    actions.submitRepackData(data)
+    var formData = new FormData()
+    formData.append('id', data.id)
+    formData.append('title', data.title)
+    formData.append('tags', data.tags)
+    formData.append('companies', data.companies)
+    formData.append('languages', data.languages)
+    formData.append('original_size', data.original_size)
+    formData.append('detail', data.detail)
+    formData.append('image', data.image[0])
+    formData.append('file', data.file[0])
+    
+    return actions.submitRepackData(formData, dispatch)
   }
 
   return (
@@ -146,7 +157,7 @@ export default function GameForm({ target }) {
                 required
                 fullWidth
                 name="original_size"
-                label="Original Size"
+                label="Original Size (GB)"
                 id="original_size"
                 autoComplete="original_size"
                 defaultValue={target.original_size}
@@ -175,7 +186,6 @@ export default function GameForm({ target }) {
                 id="image"
                 type="file"
                 name="image"
-                defaultValue={target.tags}
                 ref={register({ required: !target._id })}
               />
               <label htmlFor="image" className={classes.label}>
@@ -192,7 +202,7 @@ export default function GameForm({ target }) {
             </Grid>
             <Grid item xs={12} sm={6}>
               <input
-                accept=""
+                accept="application/zip"
                 className={classes.input}
                 id="file"
                 type="file"

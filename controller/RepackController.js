@@ -43,9 +43,8 @@ MainController.post('/', async (req, res) => {
 })
 
 MainController.delete('/', (req, res) => {
-  let { id } = req.body
-
-  return deleteOne(id, result => {
+  let { target } = req.body
+  return deleteOne(target, result => {
     return res.json({ result })
   })
 })

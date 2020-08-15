@@ -15,6 +15,7 @@ export const addOne = ({
   tags, 
   companies, 
   languages, 
+  detail,
   original_size, 
   repacked_size,
   image,
@@ -25,6 +26,7 @@ export const addOne = ({
     tags,
     companies,
     languages,
+    detail,
     original_size,
     repacked_size,
     image,
@@ -43,6 +45,7 @@ export const edit = async ({
   tags,
   companies,
   languages,
+  detail,
   original_size,
   repacked_size,
   image,
@@ -54,6 +57,7 @@ export const edit = async ({
   repack.tags = tags
   repack.companies = companies
   repack.languages = languages
+  repack.detail = detail
   repack.original_size = original_size
   if(!!image)
     repack.image = image
@@ -69,7 +73,7 @@ export const edit = async ({
 }
 
 export const deleteOne = (id, cb) => {
-  Repack.findByIdAndRemove(id, (err, repack) => {
+  Repack.findByIdAndRemove(id, err => {
     if(!!err) return cb(0)
     return cb(1)
   })

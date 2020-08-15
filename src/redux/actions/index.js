@@ -26,18 +26,24 @@ const getRepack = (id, dispatch) => {
 }
 
 const submitRepackData = (data, dispatch) => {
-  console.log(data)
-  axInsRepack.post(`/`, data)
-    .then(res => {
-      console.log(res)
-    }).catch(err => console.log(err))
+  axInsRepack.post(`/`, data, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+  .then(res => {
+    return getRepacks(dispatch)
+  }).catch(err => console.log(err))
 }
 
 const deleteRepack = (target, dispatch) => {
-  axInsRepack.delete('/', { target })
-    .then(res => {
-      console.log(res)
-    }).catch(err => console.log(err))
+  axInsRepack.delete('/', { 
+    data: { target }
+  })
+  .then(res => {
+    console.log(res)
+    return getRepacks(dispatch)
+  }).catch(err => console.log(err))
 }
 
 const signIn = (password, dispatch, cb) => {

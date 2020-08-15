@@ -5,7 +5,6 @@ export const handleUpload = (files, isEdit, title) => {
     result: 0,
     image: null,
     file: null,
-    repacked_size: files.file.size,
     message: ''
   }
 
@@ -15,6 +14,11 @@ export const handleUpload = (files, isEdit, title) => {
   let uploadResult = {}
 
   if(!!isEdit) {
+    if(!files) {
+      result = { ...result, result: 1 }
+      return result
+    }
+
     if(!!files.image) {
       uploadResult = uploadFile(files.image, imageDir, title)
       if(!uploadResult.result) {
@@ -30,7 +34,7 @@ export const handleUpload = (files, isEdit, title) => {
         result = { ...result, result: 0, message: uploadResult.message }
         return result
       }
-      result = { ...result, result: 1, file: uploadResult.name }
+      result = { ...result, result: 1, file: uploadResult.name, repacked_size: files.file.size }
     }
 
     return result
@@ -52,7 +56,7 @@ export const handleUpload = (files, isEdit, title) => {
       result = { ...result, result: 0, message: uploadResult.message }
       return result
     }
-    result = { ...result, result: 1, file: uploadResult.name }
+    result = { ...result, result: 1, file: uploadResult.name, repacked_size: files.file.size }
 
     return result
   }
