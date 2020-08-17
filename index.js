@@ -6,6 +6,11 @@ import AppMiddleware from './middleware/appMiddleware';
 
 import Route from './routes/web';
 import Api from './routes/api';
+
+import path from 'path'
+console.log(__dirname)
+console.log(path.join('../', __dirname))
+
 //As early as possible in your application, require and configure dotenv.
 dotenv.config();
 //env variables 
