@@ -7,7 +7,7 @@ const Product = () => {
   const { id } = useParams()
 
   return <>
-    <Menu />
+    <Menu block />
     <SingleProduct id={id} />
   </>
 }

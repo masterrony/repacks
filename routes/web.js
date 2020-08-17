@@ -12,7 +12,7 @@ import path from 'path'
 const Route = express.Router();
 
 
-Route.get(['/', '/dashboard', '/signin'] , (req , res)=>{
+Route.get(['/', '/dashboard', '/signin', '/repack/:id'] , (req , res)=>{
     res.render('index')
 })
 

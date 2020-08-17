@@ -13,8 +13,10 @@ const axInsAuth = axios.create({
   timeout: 10000
 })
 
-const getRepacks = dispatch => {
-  axInsRepack.get('/')
+const getRepacks = (dispatch, keyWord = null) => {
+  axInsRepack.get(`/`, {
+    params: { keyWord }
+  })
   .then( ({data: { repacks }}) => dispatch({ type: type.SET_REPACKS, payload: repacks }))
   .catch(err => console.log(err))
 }

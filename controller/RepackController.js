@@ -8,7 +8,9 @@ const MainController = Router()
 MainController.use(fileUpload())
 
 MainController.get('/', async (req, res) => {
-  let repacks = await getAll()
+  let { keyWord } = req.query
+
+  let repacks = await getAll(keyWord)
   return res.json({ repacks })
 })
 

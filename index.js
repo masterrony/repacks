@@ -9,7 +9,7 @@ import Api from './routes/api';
 //As early as possible in your application, require and configure dotenv.
 dotenv.config();
 //env variables 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3333;
 //init express
 let app = new express();
 //using ejs as a template engine

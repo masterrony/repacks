@@ -1,7 +1,12 @@
 import Repack from '../schemas/Repack'
 
-export const getAll = async () => {
-  let repacks = await Repack.find({})
+export const getAll = async keyWord => {
+  let repacks = []
+  if(!keyWord)
+    repacks = await Repack.find({})
+  else
+    repacks = await Repack.find({ title: { "$regex": keyWord, "$options": "i" } })
+
   return repacks
 }
 

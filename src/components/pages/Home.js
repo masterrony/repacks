@@ -1,16 +1,17 @@
 import React from 'react'
 import Menu from '../comps/Menu'
 import Products from '../comps/Products'
-import Header from '../comps/Utils/Header'
-
+import { useSelector } from 'react-redux';
+import Hero from '../comps/Utils/Hero';
 
 const Home = () => {
   return <>
-    <Menu />
-    <Header 
-      title="All repacks"
-      detail="Browse and download all of our repacked games" 
-    />
+    <div>
+      <header>
+        <Menu />
+        <Hero />
+      </header>
+    </div>
     <Products />
   </>
 }

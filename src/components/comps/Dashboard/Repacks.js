@@ -34,8 +34,7 @@ const Repacks = () => {
     {
       name: "Image",
       selector: "image",
-      cell: row => <div><img src={`${ImageUrl}/${row.image}`} /></div>,
-      grow: 2,
+      cell: row => <div><img width="200" src={`${ImageUrl}/${row.image}`} /></div>,
       hide: 'sm'
     },
     {
