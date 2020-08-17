@@ -156,6 +156,7 @@ export default function GameForm({ target }) {
                 variant="outlined"
                 required
                 fullWidth
+                type="number"
                 name="original_size"
                 label="Original Size (GB)"
                 id="original_size"

@@ -4,13 +4,11 @@ import { ApiUrl } from '../../config'
 import types from './types'
 
 const axInsRepack = axios.create({
-  baseURL: `${ApiUrl}repack`,
-  timeout: 10000
+  baseURL: `${ApiUrl}repack`
 })
 
 const axInsAuth = axios.create({
-  baseURL: `${ApiUrl}auth`,
-  timeout: 10000
+  baseURL: `${ApiUrl}auth`
 })
 
 const getRepacks = (dispatch, keyWord = null) => {
