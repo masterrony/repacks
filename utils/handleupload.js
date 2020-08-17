@@ -64,7 +64,7 @@ export const handleUpload = (files, isEdit, title) => {
 
 const uploadFile = (file, dir, title) => {
   let newName = title + Date.now() + file.name
-  let dest = join(__dirname, '../public/uploads', dir, newName)
+  let dest = join(__dirname, 'public/uploads', dir, newName)
 
   if(dest.indexOf('images') > 0) {
     if(file.mimetype.indexOf('image') < 0)
