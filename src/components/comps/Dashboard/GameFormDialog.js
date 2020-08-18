@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import GameForm from './GameForm'
 

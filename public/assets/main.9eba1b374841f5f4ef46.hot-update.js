@@ -1,0 +1,15 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/comps/Utils/ProtectedRoute.js":
+/*!******************************************************!*\
+  !*** ./src/components/comps/Utils/ProtectedRoute.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\n\n\n\nvar ProtectedRoute = function ProtectedRoute(_ref) {\n  var path = _ref.path,\n      Component = _ref.component;\n  var authenticated = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"useSelector\"])(function (state) {\n    return state.app.authenticated;\n  });\n  if (!authenticated) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__[\"Redirect\"], {\n    path: \"/signin\"\n  });\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, null);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProtectedRoute);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9jb21wcy9VdGlscy9Qcm90ZWN0ZWRSb3V0ZS5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9jb21wb25lbnRzL2NvbXBzL1V0aWxzL1Byb3RlY3RlZFJvdXRlLmpzPzdiMWIiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCB7IHVzZVNlbGVjdG9yIH0gZnJvbSAncmVhY3QtcmVkdXgnXHJcbmltcG9ydCB7IFJlZGlyZWN0IH0gZnJvbSAncmVhY3Qtcm91dGVyLWRvbSdcclxuXHJcblxyXG5cclxuY29uc3QgUHJvdGVjdGVkUm91dGUgPSAoeyBwYXRoLCBjb21wb25lbnQ6IENvbXBvbmVudCB9KSA9PiB7XHJcbiAgY29uc3QgYXV0aGVudGljYXRlZCA9IHVzZVNlbGVjdG9yKHN0YXRlID0+IHN0YXRlLmFwcC5hdXRoZW50aWNhdGVkKVxyXG5cclxuICBpZighYXV0aGVudGljYXRlZClcclxuICAgIHJldHVybiA8UmVkaXJlY3QgcGF0aD0nL3NpZ25pbicgLz5cclxuXHJcbiAgcmV0dXJuIDxDb21wb25lbnQgLz5cclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgUHJvdGVjdGVkUm91dGUiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUdBO0FBQUE7QUFBQTtBQUNBO0FBQUE7QUFBQTtBQUVBO0FBQ0E7QUFBQTtBQUVBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/components/comps/Utils/ProtectedRoute.js\n");
+
+/***/ })
+
+})

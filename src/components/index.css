@@ -3,3 +3,7 @@
   height: 257px;
   min-width: 330px;
 }
+
+.clickable {
+  cursor: pointer;
+}

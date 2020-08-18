@@ -1,0 +1,15 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/comps/Dashboard/GameFormDialog.js":
+/*!**********************************************************!*\
+  !*** ./src/components/comps/Dashboard/GameFormDialog.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return GameFormDialog; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Dialog */ \"./node_modules/@material-ui/core/esm/Dialog/index.js\");\n/* harmony import */ var _GameForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GameForm */ \"./src/components/comps/Dashboard/GameForm.js\");\n\n\n\nfunction GameFormDialog(_ref) {\n  var open = _ref.open,\n      handleClose = _ref.handleClose,\n      target = _ref.target;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    onClose: handleClose,\n    \"aria-labelledby\": \"simple-dialog-title\",\n    open: open\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GameForm__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    target: target,\n    closeDialog: handleClose\n  }));\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9jb21wcy9EYXNoYm9hcmQvR2FtZUZvcm1EaWFsb2cuanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvY29tcG9uZW50cy9jb21wcy9EYXNoYm9hcmQvR2FtZUZvcm1EaWFsb2cuanM/YjJiMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xyXG5pbXBvcnQgRGlhbG9nIGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL0RpYWxvZyc7XHJcbmltcG9ydCBHYW1lRm9ybSBmcm9tICcuL0dhbWVGb3JtJ1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gR2FtZUZvcm1EaWFsb2coeyBvcGVuLCBoYW5kbGVDbG9zZSwgdGFyZ2V0IH0pIHtcclxuICByZXR1cm4gKFxyXG4gICAgPERpYWxvZyBvbkNsb3NlPXtoYW5kbGVDbG9zZX0gYXJpYS1sYWJlbGxlZGJ5PVwic2ltcGxlLWRpYWxvZy10aXRsZVwiIG9wZW49e29wZW59PlxyXG4gICAgICA8R2FtZUZvcm0gIFxyXG4gICAgICAgIHRhcmdldD17dGFyZ2V0fVxyXG4gICAgICAgIGNsb3NlRGlhbG9nPXtoYW5kbGVDbG9zZX1cclxuICAgICAgLz5cclxuICAgIDwvRGlhbG9nPlxyXG4gICk7XHJcbn1cclxuIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFFQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBQUE7QUFFQTtBQUNBO0FBRkE7QUFNQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/components/comps/Dashboard/GameFormDialog.js\n");
+
+/***/ })
+
+})

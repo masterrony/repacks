@@ -5,11 +5,13 @@ import { useSelector } from 'react-redux';
 import Hero from '../comps/Utils/Hero';
 
 const Home = () => {
+  const searchMode = useSelector(state => state.app.searchMode)
+
   return <>
     <div>
       <header>
-        <Menu />
-        <Hero />
+        <Menu block={!!searchMode} />
+        { !searchMode && <Hero /> }
       </header>
     </div>
     <Products />

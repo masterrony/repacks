@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import Card from "@material-ui/core/Card";
-import Checkbox from "@material-ui/core/Checkbox";
-import IconButton from "@material-ui/core/IconButton";
+import IconButton from '@material-ui/core/IconButton'
 import SortIcon from "@material-ui/icons/ArrowDownward";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -11,20 +10,22 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ImageUrl } from '../../../config'
 import TableSubHeader from './TableSubHeader'
 import GameFormDialog from './GameFormDialog'
-import DeleteComfirmDialog from './utils/DeleteComfirmDialog'
+import DeleteComfirmDialog from '../Utils/DeleteComfirmDialog'
+import PopupNotify from '../Utils/PopupNotify'
+import BackDrop from '../Utils/BackDrop'
+import RowDetail from '../Utils/RowDetail'
 
 
-const isIndeterminate = indeterminate => indeterminate;
-const selectableRowsComponentProps = { indeterminate: isIndeterminate };
 
 const Repacks = () => {
   const repacks = useSelector(state => state.app.repacks)
+  const actionResult =  useSelector(state => state.app.actionResult)
   const dispatch = useDispatch()
   const [openForm, setOpenForm] = useState(false)
   const [openDeleteConfirmDialog, setOpenDeleteConfirmDialog] = useState(false)
+  const [openBackDrop, setOpenBackDrop] = useState(false)
   const [gameToEdit, setGameToEdit] = useState(null)
   const [gameToDelete, setGameToDelete] = useState(null)
-
   const columns = [
     {
       name: "No",
@@ -34,33 +35,13 @@ const Repacks = () => {
     {
       name: "Image",
       selector: "image",
-      cell: row => <div><img width="200" src={`${ImageUrl}/${row.image}`} /></div>,
+      cell: row => <div><img className="w-100" src={`${ImageUrl}/${row.image}`} /></div>,
       hide: 'sm'
     },
     {
       name: "Title",
       selector: "title",
       sortable: true
-    },
-    {
-      name: "Detail",
-      selector: "detail",
-      sortable: true,
-    },
-    {
-      name: "Tags",
-      selector: "tags",
-      sortable: true,
-    },
-    {
-      name: "Companies",
-      selector: "companies",
-      sortable: true,
-    },
-    {
-      name: "Languages",
-      selector: "languages",
-      sortable: true,
     },
     {
       name: "Original Size",
@@ -101,10 +82,23 @@ const Repacks = () => {
   useEffect(() => {
     actions.getRepacks(dispatch)
   }, [])
+  
+  useEffect(() => {
+    if(!!actionResult) {
+      if(actionResult.status === 'pending')
+        setOpenBackDrop(true)
+      else
+        setOpenBackDrop(false)
+      } 
+  }, [actionResult])
 
   const openGameFormDialog = target => {
     setGameToEdit(target)
     setOpenForm(true)
+  }
+
+  const handleCloseGameFormDialog = () => {
+    setOpenForm(false)
   }
 
   const readyToDelete = target => {
@@ -124,19 +118,27 @@ const Repacks = () => {
           columns={columns}
           data={repacks}
           keyField="_id"
+          pointerOnHover
           highlightOnHover
           responsive
+          progressPending={!repacks}
           defaultSortField="title"
           sortIcon={<SortIcon />}
           pagination
           subHeader
           subHeaderComponent={<TableSubHeader onAddBtnClick={() => openGameFormDialog(null)} />}
+          expandableRows
+          expandOnRowClicked
+          expandableRowsHideExpander
+          expandableRowsComponent={<RowDetail />}
         />
       </Card>
+      <PopupNotify />
+      <BackDrop open={openBackDrop} />
       <GameFormDialog 
         open={openForm} 
         target={gameToEdit} 
-        handleClose={() => setOpenForm(false)} 
+        handleClose={handleCloseGameFormDialog} 
       />
       <DeleteComfirmDialog
         open={openDeleteConfirmDialog}

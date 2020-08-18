@@ -19,19 +19,19 @@ const Item = ({ _id, image, title, detail, file }) => {
   return (
     <MDBCol lg="4" md="12" className="mb-lg-0 mb-4 my-4">
       <MDBAnimation type="pulse" reveal>
-        <MDBView className="overlay rounded z-depth-1" waves>
-          {
-            !image ? <Skeleton />
-                  : <img
-                      src={`${ImageUrl}${image}`}
-                      alt=""
-                      className="img-fluid img-repack-card"
-                    />
-          }
-          <Link to={`/repack/${_id}`}>
-            <MDBMask overlay="white-slight" />
-          </Link>
-        </MDBView>
+        <Link to={`/repack/${_id}`}>
+          <MDBView className="overlay rounded z-depth-1 clickable" waves>      
+              {
+                !image ? <Skeleton />
+                      : <img
+                          src={`${ImageUrl}${image}`}
+                          alt=""
+                          className="img-fluid img-repack-card"
+                        />
+              }
+              <MDBMask overlay="white-slight" />
+          </MDBView>
+        </Link>
         <MDBCardBody className="pb-0">
           <h4 className="font-weight-bold my-3">{title || <Skeleton/>}</h4>
           { !file ? <Skeleton />

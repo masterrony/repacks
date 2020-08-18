@@ -1,0 +1,15 @@
+webpackHotUpdate("main",{
+
+/***/ "./src/components/pages/Home.js":
+/*!**************************************!*\
+  !*** ./src/components/pages/Home.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _comps_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../comps/Menu */ \"./src/components/comps/Menu/index.js\");\n/* harmony import */ var _comps_Products__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comps/Products */ \"./src/components/comps/Products/index.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _comps_Utils_Hero__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../comps/Utils/Hero */ \"./src/components/comps/Utils/Hero.js\");\n\n\n\n\n\n\nvar Home = function Home() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"header\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comps_Menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comps_Products__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Home);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy9wYWdlcy9Ib21lLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2NvbXBvbmVudHMvcGFnZXMvSG9tZS5qcz9kODBlIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IE1lbnUgZnJvbSAnLi4vY29tcHMvTWVudSdcclxuaW1wb3J0IFByb2R1Y3RzIGZyb20gJy4uL2NvbXBzL1Byb2R1Y3RzJ1xyXG5pbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gJ3JlYWN0LXJlZHV4JztcclxuaW1wb3J0IEhlcm8gZnJvbSAnLi4vY29tcHMvVXRpbHMvSGVybyc7XHJcblxyXG5jb25zdCBIb21lID0gKCkgPT4ge1xyXG4gIHJldHVybiA8PlxyXG4gICAgPGRpdj5cclxuICAgICAgPGhlYWRlcj5cclxuICAgICAgICA8TWVudSAvPlxyXG4gICAgICAgIHsvKiA8SGVybyAvPiAqL31cclxuICAgICAgPC9oZWFkZXI+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxQcm9kdWN0cyAvPlxyXG4gIDwvPlxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBIb21lIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFTQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/components/pages/Home.js\n");
+
+/***/ })
+
+})

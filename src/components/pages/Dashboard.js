@@ -18,10 +18,13 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HomeIcon from '@material-ui/icons/Home';
-import useCheckAuth from '../../hooks/useCheckAuth'
+import { useHistory, Link as LinkRouter } from 'react-router-dom';
+import { MDBNotification } from "mdbreact";
 import { mainListItems } from '../comps/Dashboard/listitems';
 import Repacks from '../comps/Dashboard/Repacks';
-import { useHistory, Link as LinkRouter } from 'react-router-dom';
+import PopupNotify from '../comps/Utils/PopupNotify'
+
+
 
 function Copyright() {
   return (
@@ -121,12 +124,6 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const history = useHistory()
-  const authenticated = useCheckAuth()
-
-  useEffect(() => {
-    if(!authenticated)
-      history.push('/signin')
-  }, [])
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -134,10 +131,10 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
+      {/* <PopupNotify /> */}
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
@@ -179,11 +176,8 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Recent Repacks */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <Repacks />
-              </Paper>
+              <Repacks />
             </Grid>
           </Grid>
           <Box pt={4}>

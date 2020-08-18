@@ -28,6 +28,7 @@ const Menu = ({ block }) => {
       return
 
     e.preventDefault()
+    actions.setSearchMode(dispatch)
     return actions.getRepacks(dispatch, e.target.value)
   }
 

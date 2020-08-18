@@ -78,8 +78,8 @@ export const edit = async ({
 }
 
 export const deleteOne = (id, cb) => {
-  Repack.findByIdAndRemove(id, err => {
+  Repack.findByIdAndRemove(id, (err, { file, image }) => {
     if(!!err) return cb(0)
-    return cb(1)
+    return cb({ result: 1, file, image })
   })
 }

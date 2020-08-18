@@ -12,6 +12,7 @@ const axInsAuth = axios.create({
 })
 
 const getRepacks = (dispatch, keyWord = null) => {
+  dispatch({ type: types.SET_REPACKS, payload: undefined })
   axInsRepack.get(`/`, {
     params: { keyWord }
   })
@@ -31,7 +32,17 @@ const submitRepackData = (data, dispatch) => {
       'Content-Type': 'multipart/form-data'
     }
   })
-  .then(res => {
+  .then( res => {
+    if(!res.data.result)
+      return setActionResult(dispatch, {
+        statis: 'error',
+        message: 'Oops, Something went wrong!'
+      })
+
+    setActionResult(dispatch, {
+      statis: 'success',
+      message: !data.get('id') ? 'Game added successfully!' : 'Change saved successfully!'
+    })
     return getRepacks(dispatch)
   }).catch(err => console.log(err))
 }
@@ -40,8 +51,17 @@ const deleteRepack = (target, dispatch) => {
   axInsRepack.delete('/', { 
     data: { target }
   })
-  .then(res => {
-    console.log(res)
+  .then(({ data: { result } }) => {
+    if(!result)
+      return setActionResult(dispatch, {
+        status: 'error',
+        message: 'Oops, Something went wrong!'
+      })
+
+    setActionResult(dispatch, {
+      status: 'success',
+      message: 'Deleted successfully!'
+    })
     return getRepacks(dispatch)
   }).catch(err => console.log(err))
 }
@@ -59,6 +79,16 @@ const signIn = (password, dispatch, cb) => {
   .catch( err => console.log(err))
 }
 
+const setSearchMode = dispatch => dispatch({ type: types.SET_SEARCH_MODE })
+
+const setActionResult = (dispatch, actionResult) => dispatch({ type: types.SET_ACTION_RESULT, payload: actionResult })
+
 export default {
-  getRepack, getRepacks, signIn, submitRepackData, deleteRepack
+  getRepack, 
+  getRepacks, 
+  signIn, 
+  submitRepackData, 
+  deleteRepack, 
+  setSearchMode,
+  setActionResult
 }

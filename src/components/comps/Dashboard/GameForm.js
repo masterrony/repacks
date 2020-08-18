@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -8,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar'
 import GameOutlinedIcon from '@material-ui/icons/GamesOutlined'
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import ConfirmIcon from '@material-ui/icons/Check'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import actions from '../../../redux/actions'
@@ -42,10 +43,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function GameForm({ target }) {
+export default function GameForm({ target, closeDialog }) {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm()
   const dispatch = useDispatch()
+  const [imageSeleceted, setImageSelected] = useState(0)
+  const [fileSeleceted, setFileSelected] = useState(0)
 
   if(!target) {
     target = {
@@ -57,6 +60,20 @@ export default function GameForm({ target }) {
       detail: '',
       original_size: ''
     }
+  }
+
+  const handleImageChange = e => {
+    if(!e.target.value)
+      return setImageSelected(0)
+  
+    return setImageSelected(1)
+  }
+
+  const handleFileChange = e => {
+    if(!e.target.value)
+      return setFileSelected(0)
+  
+    return setFileSelected(1)
   }
 
   const onFormSubmit = data => {
@@ -71,7 +88,11 @@ export default function GameForm({ target }) {
     formData.append('image', data.image[0])
     formData.append('file', data.file[0])
     
-    return actions.submitRepackData(formData, dispatch)
+    actions.submitRepackData(formData, dispatch)
+    actions.setActionResult(dispatch, {
+      status: 'pending'
+    })
+    return closeDialog()
   }
 
   return (
@@ -187,6 +208,7 @@ export default function GameForm({ target }) {
                 id="image"
                 type="file"
                 name="image"
+                onChange={handleImageChange}
                 ref={register({ required: !target._id })}
               />
               <label htmlFor="image" className={classes.label}>
@@ -196,18 +218,19 @@ export default function GameForm({ target }) {
                   component="span"
                   fullWidth
                 >
-                  Select Image
+                  { !imageSeleceted ? 'Select Image' : <ConfirmIcon /> }
                 </Button>
               </label>
               { errors.image && <Typography variant="body2" color="secondary" className={classes.label}>You must upload a screenshot image</Typography> }
             </Grid>
             <Grid item xs={12} sm={6}>
               <input
-                accept="application/zip"
+                accept="*"
                 className={classes.input}
                 id="file"
                 type="file"
                 name="file"
+                onChange={handleFileChange}
                 ref={register({ required: !target._id })}
               />
               <label htmlFor="file" className={classes.label}>
@@ -217,7 +240,7 @@ export default function GameForm({ target }) {
                   component="span"
                   fullWidth
                 >
-                  Select File
+                  { !fileSeleceted ? 'Select File' : <ConfirmIcon /> }
                 </Button>
               </label>
               { errors.file && <Typography variant="body2" color="secondary" className={classes.label}>You must upload the repacked game</Typography> }

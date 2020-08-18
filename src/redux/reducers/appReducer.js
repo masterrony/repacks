@@ -2,12 +2,14 @@ import types from '../actions/types'
 import { ServerUrl, ImageUrl, DownloadUrl } from '../../config'
 
 const initialState = {
-  repacks : [],
+  repacks : undefined,
   repack: {},
   authenticated: 0,
   serverUrl: ServerUrl,
   imageUrl: ImageUrl,
-  downloadUrl: DownloadUrl
+  downloadUrl: DownloadUrl,
+  searchMode: 0,
+  actionResult: undefined
 }
 
 export default (state = initialState , action={}) => {
@@ -18,6 +20,10 @@ export default (state = initialState , action={}) => {
         return { ...state, repack: action.payload }
     case types.AUTH_USER:
         return { ...state, authenticated: 1 }
+    case types.SET_SEARCH_MODE:
+        return { ...state, searchMode: 1 }
+    case types.SET_ACTION_RESULT:
+        return { ...state, actionResult: action.payload}
     default:
       return state;
   }
