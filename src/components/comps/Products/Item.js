@@ -8,13 +8,17 @@ import {
   MDBView,
   MDBCardBody
 } from 'mdbreact'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { DownloadUrl, ImageUrl } from '../../../config'
 import Skeleton from "react-loading-skeleton";
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 const Item = ({ _id, image, title, detail, file }) => {
   const imageUrl = useSelector(state => state.app.imageUrl)
+  const history = useHistory()
+  
+  const viewMore = () => history.push( `/repack/${_id}`)
 
   return (
     <MDBCol lg="4" md="12" className="mb-lg-0 mb-4 my-4">
@@ -40,9 +44,7 @@ const Item = ({ _id, image, title, detail, file }) => {
                     </MDBBtn>
           }
           { !_id ? <Skeleton />
-                : <MDBBtn color="purple" size="sm">
-                    <Link to={`/repack/${_id}`} className="text-white">View More</Link>
-                  </MDBBtn>}
+                : <MDBBtn color="purple" size="sm" onClick={viewMore}>View more</MDBBtn>}
         </MDBCardBody>
       </MDBAnimation>
     </MDBCol>

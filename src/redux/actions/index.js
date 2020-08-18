@@ -3,6 +3,8 @@ import type from './types'
 import { ApiUrl } from '../../config'
 import types from './types'
 
+
+
 const axInsRepack = axios.create({
   baseURL: `${ApiUrl}repack`
 })
@@ -29,41 +31,57 @@ const getRepack = (id, dispatch) => {
 const submitRepackData = (data, dispatch) => {
   axInsRepack.post(`/`, data, {
     headers: {
-      'Content-Type': 'multipart/form-data'
+      'Content-Type': 'multipart/form-data',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
   })
   .then( res => {
     if(!res.data.result)
       return setActionResult(dispatch, {
-        statis: 'error',
-        message: 'Oops, Something went wrong!'
+        status: 'error',
+        message: !!res.data.message ? res.data.message : 'Oops, Something went wrong.'
       })
 
     setActionResult(dispatch, {
-      statis: 'success',
-      message: !data.get('id') ? 'Game added successfully!' : 'Change saved successfully!'
+      status: 'success',
+      message: !data.get('id') ? 'Game added.' : 'Change saved.'
     })
     return getRepacks(dispatch)
-  }).catch(err => console.log(err))
+  }).catch(err => {
+    console.log(err)
+    return setActionResult(dispatch, {
+      status: 'error',
+      message: 'Oops, Something went wrong.'
+    })
+  })
 }
 
 const deleteRepack = (target, dispatch) => {
   axInsRepack.delete('/', { 
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    },
     data: { target }
   })
   .then(({ data: { result } }) => {
     if(!result)
       return setActionResult(dispatch, {
         status: 'error',
-        message: 'Oops, Something went wrong!'
+        message: 'Oops, Something went wrong.'
       })
 
     setActionResult(dispatch, {
       status: 'success',
-      message: 'Deleted successfully!'
+      message: 'Deleted successfully.'
     })
     return getRepacks(dispatch)
-  }).catch(err => console.log(err))
+  }).catch(err => {
+    console.log(err)
+    return setActionResult(dispatch, {
+      status: 'error',
+      message: 'Oops, Something went wrong.'
+    })
+  })
 }
 
 const signIn = (password, dispatch, cb) => {
@@ -71,9 +89,12 @@ const signIn = (password, dispatch, cb) => {
     url: '/signin',
     method: 'post',
     data: { password }
-  }).then( ({ data: { result } }) => {
-    if(!!result)
-      dispatch({ type: types.AUTH_USER })
+  }).then( ({ data: { result, token } }) => {
+    if(!result)
+      return cb(result)
+
+    localStorage.setItem('token', token)
+    dispatch({ type: types.AUTH_USER })
     return cb(result)
   })
   .catch( err => console.log(err))

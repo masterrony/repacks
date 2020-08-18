@@ -9,7 +9,7 @@ const AppMiddleware = new express();
 //body parser middleware
 AppMiddleware.use(bodyParser.json());
 //cors middleware
-AppMiddleware.use(cors());
+// AppMiddleware.use(cors());
 //helmet middleware
 AppMiddleware.use(helmet());
 //body parser

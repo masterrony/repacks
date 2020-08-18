@@ -51,7 +51,7 @@ const SingleProduct = ({ id }) => {
               <img
                 src={`${ImageUrl}${image}`}
                 alt=""
-                className="img-fluid rounded z-depth-1"
+                className="img-fluid rounded z-depth-1 w-100"
               />
             </MDBAnimation>
           </MDBCol>

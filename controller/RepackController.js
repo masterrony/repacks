@@ -1,7 +1,8 @@
 import { Router } from 'express'
 import fileUpload from 'express-fileupload'
 import { getAll, getById, addOne, edit, deleteOne } from '../model/actions/RepackModel'
-import { handleUpload, deleteFile } from '../utils/handle_file'
+import { handleUpload, deleteFile } from '../utils/handleFile'
+import { verifyToken } from '../utils/verifyToken'
 
 const MainController = Router()
 
@@ -19,7 +20,7 @@ MainController.get('/:id', async (req, res) => {
   return res.json({ repack })
 })
 
-MainController.post('/', async (req, res) => {
+MainController.post('/', verifyToken,async (req, res) => {
   let data = req.body
 
   let fileUploadResult = await handleUpload(req.files, data.id, data.title)
@@ -44,7 +45,7 @@ MainController.post('/', async (req, res) => {
   })
 })
 
-MainController.delete('/', (req, res) => {
+MainController.delete('/', verifyToken, (req, res) => {
   let { target } = req.body
 
   return deleteOne(target, result => {

@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux'
 const PopupNotify = () => {
   const dispatch = useDispatch()
   const actionResult =  useSelector(state => state.app.actionResult)
-  let severity = !!actionResult ? actionResult.status : ''
-  let message = !!actionResult ? actionResult.message : ''
+  const severity = !!actionResult ? actionResult.status : ''
+  const message = !!actionResult ? `${severity.toUpperCase()}! ${actionResult.message}` : ''
 
   const handleClose = () => actions.setActionResult(dispatch, undefined)
 
